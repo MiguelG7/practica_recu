@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<%- include('../header') %>
+<h1>Puntuación:<a id="points"></a></h1>
+<div class="container">
+    <canvas width="400" height="400" id="snake" style="border: 1px inset #000000;"></canvas>
+    <table>
+        <tr><td>MEJORES PUNTUACIONES</td></tr>
+        <tr>
+          <td>Miguel</td>
+          <td>70</td>
+        </tr>
+        <tr>
+            <td>Pedro</td>
+            <td>16</td>
+          </tr>
+      </table>
+</div>
+<script src="/javascript/snake.js"></script>
+<h1>RÉCORD DE <%= session.user.username %>: <a id="record"></a></h1>

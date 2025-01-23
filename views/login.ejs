@@ -1,0 +1,15 @@
+<% if (!session.user) { %>
+<h1>Login</h1>
+<div class="container">
+    <form action="/login" method="POST">
+
+        <label for="usuario">Usuario: </label>
+        <input id="user_id" name="user" placeholder="Introduce tu usuario"> <br>
+
+        <label for="contrasena">Password: </label>
+        <input id="password_id" type="password" name="password" placeholder="Introduce tu contraseña"> <br>
+
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+</div>
+<% } %>

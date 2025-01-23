@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<% console.log(cookies) %>
+<% if(cookies.cookiesAccepted) { %>
+    <%- include('header') %>
+    <%- include('login') %>
+    <% if(session.user) {%>
+        <img src="https://www.masquesaludanimal.es/posts/asset_upload_file62204_619469.jpg" alt="ovejas">
+    <% } %>
+<br>
+<% }else { %>
+    <div style="color: gray; pointer-events: none;">
+    <%- include('header') %>
+    <%- include('login') %>
+    </div>
+    <%- include('footer') %>
+<% } %>

@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<%- include('../header') %>
+
+<div class="container">
+    
+    <form action="/register" method="POST"  onsubmit="return validarContrasena()">
+        
+        <label for="email">Email: </label>
+        <input id="email_id" placeholder="Introduce tu email" name="email" type="email" required> <br>
+
+        <label for="user">Usuario: </label>
+        <input id="user_id" placeholder="Introduce tu usuario" name="user" required> <br>
+
+        <label for="password1">Contraseña: </label>
+        <input id="password_id1" type="password" placeholder="Introduce tu contraseña" name="password1" required> <br>
+
+        <label for="password2">Repite tu contraseña: </label>
+        <input id="password_id2" type="password" placeholder="Repite tu contraseña" name="password2" required> <br>
+
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
+
+<script>
+    function validarContrasena(){
+        const p1 = document.getElementById("password_id1").value;
+        const p2 = document.getElementById("password_id2").value;
+
+        if(p1===p2) {
+            return true;
+        } else if(p1!==p2){
+            alert("Sus contraseñas no son iguales");
+            return false;
+        }
+    }
+</script>

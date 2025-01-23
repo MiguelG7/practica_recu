@@ -1,0 +1,20 @@
+
+<h1>Bienvenido a <%= title %> </h1>
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <% if (session.user) { %>
+        <a href="/chat">Chat</a>
+        <a href="/snake">Snake</a>
+    <% } %>
+
+    <% if (!session.user) { %>
+        <a href="/register"> Registro</a>
+    <% } %>
+
+    <% if (session.user) { %>
+            <a>
+                Bienvenido <%= session.user.username %>
+                <a href="/logout">Logout</a>
+            </a>
+    <% } %>
+</div>

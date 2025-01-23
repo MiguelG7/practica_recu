@@ -1,0 +1,23 @@
+* {
+    text-align: center;
+}
+
+body{
+    background: #3FA425;
+    background: -moz-radial-gradient(center, #3FA425 0%, #04CB72 0%, #176175 100%);
+    background: -webkit-radial-gradient(center, #3FA425 0%, #04CB72 0%, #176175 100%);
+    background: radial-gradient(ellipse at center, #3FA425 0%, #04CB72 0%, #176175 100%);
+}
+table, th, td{
+    border: 1px solid;
+}
+
+.container{
+    display: inline-flex;
+    gap: 20px; /* Espacio entre el canvas y la tabla */
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
