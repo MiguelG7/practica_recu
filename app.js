@@ -48,6 +48,17 @@ app.use('/register', registerRouter);
 
 io.on('connection', (socket) => {
     console.log('a user connected');
+
+     // Manejar mensajes de chat
+     socket.on('chat message', (msg) => {
+        console.log('Mensaje recibido:', msg);
+        io.emit('chat message', msg); // Enviar el mensaje a todos los clientes conectados
+    });
+
+    // Manejar desconexiones
+    socket.on('disconnect', () => {
+        console.log('Un usuario se ha desconectado:', socket.id);
+    });
 });
 
 server.listen(3000, () => {
