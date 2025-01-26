@@ -3,18 +3,23 @@ const session = require('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
 
+//sockets
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
 app.use(express.static('public'));//hace que public sea el comienzo de la ruta relativa haciendo posible rutas como /javascript/snake en snake.ejs
 app.set('view engine','ejs');
 app.set('views', './views');
 
-app.locals.title = "CHAT&SNAKE"
+app.locals.title = "CHAT&SNAKE";
 
 const indexRouter = require('./routes/index');
 const footerRouter = require('./routes/footer');
 const chatRouter = require('./routes/chat');
 const snakeRouter = require('./routes/snake');
 const registerRouter = require('./routes/register');
-//const loginRouter = require('./routes/login');
 
 app.use(session({
     secret: 'mi-secreto',
@@ -41,4 +46,10 @@ app.use('/snake', snakeRouter);
 app.use('/register', registerRouter);
 //app.use('/login', loginRouter);
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+io.on('connection', (socket) => {
+    console.log('a user connected');
+});
+
+server.listen(3000, () => {
+    console.log('Servidor corriendo en http://localhost:3000');
+});

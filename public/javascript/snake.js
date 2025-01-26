@@ -1,8 +1,8 @@
 var canvas = document.getElementById('snake');
 var context = canvas.getContext('2d');
-
 // the canvas width & height, snake x & y, and the apple x & y, all need to be a multiples of the grid size in order for collision detection to work
 // (e.g. 16 * 25 = 400)
+
 var grid = 16;
 var count = 0;
 let points = 0;
@@ -38,6 +38,7 @@ function loop() {
   requestAnimationFrame(loop);
   document.getElementById("points").innerHTML = points; 
   document.getElementById("record").innerHTML = record;
+  document.getElementById("record2").innerHTML = record;
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
   if (++count < 4) {

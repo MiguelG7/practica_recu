@@ -1,8 +1,14 @@
 const express = require('express');
-const fs = require('node:fs')
 const router = express.Router();
+const fs = require('node:fs');
 
 router.get('/', (req,res) =>{
+
+    console.log("GET /snake")
+
+    //let obj = fs.readFileSync('./database/highscores.json');
+    //let json = JSON.parse(obj);
+    //console.log(String(obj));
     res.render('./snake/snake', {user: req.session.user.username, record: req.body.record});
 });
 
@@ -16,7 +22,7 @@ router.post('/save-score', (req,res) =>{
     };
 
         // Escribir los datos en un archivo JSON
-    fs.writeFile('./database/highscores.json', JSON.stringify(highscores, null, 2), err => {
+    fs.appendFile('./database/highscores.json', (JSON.stringify(highscores, null, 2),"\n"), err => {
         if (err) {
             console.error("Error al escribir en la base de datos:", err);
         } else {

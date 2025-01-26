@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-const fs = require('node:fs')
+const fs = require('node:fs');
+const { console } = require('node:inspector');
 
 users = {};
 
@@ -32,9 +33,12 @@ users.register = async function(username, email, password) {
     if (users.data.hasOwnProperty(username)) {
         throw new Error(`Ya existe el usuario ${username}.`);
     }
-    if (Object.values(users.email_user).includes(email)) {
+    if (users.email_user.hasOwnProperty(email) ){
         throw new Error(`Ya existe un usuario con el correo ${email}.`);
     }
+
+
+    console.log("El correo es ",email, "y existen ", users.email_user);
 
     // Generar el hash de forma asíncrona
     const hash = await users.generateHash(password);
@@ -47,7 +51,7 @@ users.register = async function(username, email, password) {
     const databaseContent = await users.showDatabase();
 
     // Escribir los datos en un archivo JSON
-    fs.writeFile('./database/db.json', JSON.stringify(databaseContent, null, 2), err => {
+    fs.appendFile('./database/db.json', JSON.stringify(databaseContent, null, 2), err => {
         if (err) {
             console.error("Error al escribir en la base de datos:", err);
         } else {

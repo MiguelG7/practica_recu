@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const users = require('../database/models/users.models')
 
+
 router.get('/', (req,res) =>{
     console.log("entre a router.get('/");
     if (req.cookies.loggedIn){
