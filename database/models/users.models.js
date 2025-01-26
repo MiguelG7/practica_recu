@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const fs = require('node:fs')
 
 users = {};
 
@@ -14,29 +15,49 @@ users.getEmailByUsername = function(username){
     return users.data[username].email;
 }
 
-users.generateHash = function(password, callback){
-    bcrypt.hash(password, 10, callback);
-}
+users.generateHash = function(password) {
+    return new Promise((resolve, reject) => {
+        bcrypt.hash(password, 10, (err, hash) => {
+            if (err) reject(err); // Rechaza la promesa si hay un error
+            resolve(hash); // Resuelve la promesa con el hash
+        });
+    });
+};
 
 users.comparePass = async function(password, hash){
     return await bcrypt.compare(password, hash);
 }
 
-users.register = function(username, email, password){
-    if(users.data.hasOwnProperty(username)){
+users.register = async function(username, email, password) {
+    if (users.data.hasOwnProperty(username)) {
         throw new Error(`Ya existe el usuario ${username}.`);
     }
-    if(users.data.hasOwnProperty(email)){
-        throw new Error(`Ya existe el usuario ${email}.`);
+    if (Object.values(users.email_user).includes(email)) {
+        throw new Error(`Ya existe un usuario con el correo ${email}.`);
     }
-    users.generateHash(password, function(err, hash){
-        if(err){
-            throw new Error(`Error al generar el hash de ${username}.`);
+
+    // Generar el hash de forma asíncrona
+    const hash = await users.generateHash(password);
+
+    // Guardar el usuario en la base de datos en memoria
+    users.data[username] = { username, email, hash, last_Login: new Date().toISOString() };
+    users.email_user[email] = username;
+
+    // Obtener los datos de la base de datos como un array
+    const databaseContent = await users.showDatabase();
+
+    // Escribir los datos en un archivo JSON
+    fs.writeFile('./database/db.json', JSON.stringify(databaseContent, null, 2), err => {
+        if (err) {
+            console.error("Error al escribir en la base de datos:", err);
+        } else {
+            console.log("Base de datos actualizada correctamente.");
         }
-        users.data[username] = {username, email, hash, last_Login: new Date().toISOString};
-        users.email_user[email] = username;
     });
-}
+};
+
+
+
 
 users.isLoginRight = async function(email_user, type, password){
     if(type == 'email'){
@@ -52,5 +73,19 @@ users.isLoginRight = async function(email_user, type, password){
     }
     
 }
+
+users.showDatabase = async function() {
+    const result = Object.keys(users.data).map(username => {
+        const user = users.data[username];
+        return {
+            username: user.username,
+            email: user.email,
+            hash: user.hash
+        };
+    });
+
+    return result; // Devuelve el array con los datos de los usuarios
+};
+
 
 module.exports = users;
