@@ -24,6 +24,7 @@
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+
     // Conexión con el servidor Socket.IO
     const socket = io();
     // Referencias a elementos del DOM
@@ -35,9 +36,9 @@
     form.addEventListener('submit', (e) => {
         e.preventDefault(); // Evitar recargar la página
         if (input.value) {
-            socket.emit('chat message', input.value); // Enviar mensaje al servidor
-            input.value = ''; // Limpiar el campo de entrada
+            socket.emit('chat message', (String("<%= cookies.user%>: "+ input.value))); // Enviar mensaje al servidor
         }
+        input.value = ''; // Limpiar el campo de entrada
     });
 
     // Escuchar mensajes del servidor

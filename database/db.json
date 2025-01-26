@@ -28,4 +28,49 @@
     "email": "miguel@profe",
     "hash": "$2b$10$Au9lhsxhNJw2X3Grqw2hUesiwJ5TiWV05PTgQzhBq6Z/5yPWdAW0C"
   }
+][
+  {
+    "username": "a",
+    "email": "miguel@profe",
+    "hash": "$2b$10$iI2j8vY508ecx6rPUsakeei8qE6T0vz/j3fvCRQuAiCK3z4T2ujBa"
+  }
+][
+  {
+    "username": "a",
+    "email": "miguel@profe",
+    "hash": "$2b$10$5CBcjdSYENA56l9iNJ2dLerLn/MXIcozcWLBuyotILwegOyfxrPqq"
+  }
+][
+  {
+    "username": "Pedrito",
+    "email": "pedrito@alumno",
+    "hash": "$2b$10$jrXUqb7rQvLAyo5fZCPhYOiO96HdWpLhSTjcJgB0nWybeaK38NQcS"
+  }
+][
+  {
+    "username": "Pedrito",
+    "email": "pedrito@alumno",
+    "hash": "$2b$10$jrXUqb7rQvLAyo5fZCPhYOiO96HdWpLhSTjcJgB0nWybeaK38NQcS"
+  },
+  {
+    "username": "manolo",
+    "email": "root@root",
+    "hash": "$2b$10$zadiAd4zljMriA/mizjGFesc.UpN17IL7liYiH83WlpT/iyecpR9i"
+  }
+][
+  {
+    "username": "Pedrito",
+    "email": "pedrito@alumno",
+    "hash": "$2b$10$jrXUqb7rQvLAyo5fZCPhYOiO96HdWpLhSTjcJgB0nWybeaK38NQcS"
+  },
+  {
+    "username": "manolo",
+    "email": "root@root",
+    "hash": "$2b$10$zadiAd4zljMriA/mizjGFesc.UpN17IL7liYiH83WlpT/iyecpR9i"
+  },
+  {
+    "username": "manoloa",
+    "email": "miguel@profe",
+    "hash": "$2b$10$hy/DVqJZOsM50zs09nzQvupW7dh6PlvOJ0ZV.O2UeyNMD/FFBa4ZK"
+  }
 ]
