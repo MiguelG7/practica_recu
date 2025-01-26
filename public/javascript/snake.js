@@ -114,9 +114,34 @@ function loop() {
 
 
         if(points>record){
+          console.log("Intentando guardar la puntuación...");
           record=points;
+          fetch('/snake/save-score', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                points: points,
+                record: record,
+            }),
+          })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Error al guardar la puntuación');
+              }
+              return response.json();
+          })
+          .then(data => {
+              console.log('Puntuación guardada:', data);
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
+          
         }
-        points=0;
+        console.log("puntuación a 0");
+        points = 0;
 
       }
     }
