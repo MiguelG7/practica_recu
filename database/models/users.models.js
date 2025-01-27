@@ -49,9 +49,13 @@ users.register = async function(username, email, password) {
 
     // Obtener los datos de la base de datos como un array
     const databaseContent = await users.showDatabase();
+    databaseContent.push(users.data[username]);
+
+
+    console.log("database"+databaseContent);
 
     // Escribir los datos en un archivo JSON
-    fs.appendFile('./database/db.json', JSON.stringify(databaseContent, null, 2), err => {
+    fs.writeFile('./database/db.json', JSON.stringify(databaseContent, null, 2), err => {
         if (err) {
             console.error("Error al escribir en la base de datos:", err);
         } else {

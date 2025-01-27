@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 //sockets
 const http = require('http');
@@ -13,7 +14,7 @@ app.use(express.static('public'));//hace que public sea el comienzo de la ruta r
 app.set('view engine','ejs');
 app.set('views', './views');
 
-app.locals.title = "CHAT&SNAKE";
+app.locals.title = process.env.TITLE_ENV;
 
 const indexRouter = require('./routes/index');
 const footerRouter = require('./routes/footer');

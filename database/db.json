@@ -2,98 +2,17 @@
   {
     "username": "a",
     "email": "miguel@profe",
-    "hash": "$2b$10$jEqn5AE7zCIonycxEjLOR.T5i9O7dd/6MGYzHTmwFNvn1rBTijAVS"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$wIzGgBEhlTDAcqzyo1r50eUWw7U.RN49Map.5MmclQDAOV146i92a"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$W8.R1aoB25uAYVkM1m5eGOzKKH4bEBypBrbNcnD3xOpoC.GNL1rmm"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$yvtvrAWRAIVTEEkNXzce4u4icmiK.O9kmF6DiOXTenT3167G70SJ2"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$Au9lhsxhNJw2X3Grqw2hUesiwJ5TiWV05PTgQzhBq6Z/5yPWdAW0C"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$iI2j8vY508ecx6rPUsakeei8qE6T0vz/j3fvCRQuAiCK3z4T2ujBa"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$5CBcjdSYENA56l9iNJ2dLerLn/MXIcozcWLBuyotILwegOyfxrPqq"
-  }
-][
-  {
-    "username": "Pedrito",
-    "email": "pedrito@alumno",
-    "hash": "$2b$10$jrXUqb7rQvLAyo5fZCPhYOiO96HdWpLhSTjcJgB0nWybeaK38NQcS"
-  }
-][
-  {
-    "username": "Pedrito",
-    "email": "pedrito@alumno",
-    "hash": "$2b$10$jrXUqb7rQvLAyo5fZCPhYOiO96HdWpLhSTjcJgB0nWybeaK38NQcS"
+    "hash": "$2b$10$UewuXB8GBXaeqlGowcrPpuRqiqiGXVtGGbUdijfYs1j.MsUD2Zeki"
   },
   {
-    "username": "manolo",
-    "email": "root@root",
-    "hash": "$2b$10$zadiAd4zljMriA/mizjGFesc.UpN17IL7liYiH83WlpT/iyecpR9i"
-  }
-][
-  {
-    "username": "Pedrito",
-    "email": "pedrito@alumno",
-    "hash": "$2b$10$jrXUqb7rQvLAyo5fZCPhYOiO96HdWpLhSTjcJgB0nWybeaK38NQcS"
+    "username": "hola",
+    "email": "miguelgamboasanchez@gmail.com",
+    "hash": "$2b$10$u1oJFCu0O3c.G/FkW8KS/eS282tLb23ml9ZOQ7yKLcajdlHSklA8u"
   },
   {
-    "username": "manolo",
-    "email": "root@root",
-    "hash": "$2b$10$zadiAd4zljMriA/mizjGFesc.UpN17IL7liYiH83WlpT/iyecpR9i"
-  },
-  {
-    "username": "manoloa",
-    "email": "miguel@profe",
-    "hash": "$2b$10$hy/DVqJZOsM50zs09nzQvupW7dh6PlvOJ0ZV.O2UeyNMD/FFBa4ZK"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$yRcuQEx5.BqZ3bBIfhJW.ewdWYd5UVAhTsZtodbWmkLx.9gcq4A7S"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$yRcuQEx5.BqZ3bBIfhJW.ewdWYd5UVAhTsZtodbWmkLx.9gcq4A7S"
-  },
-  {
-    "username": "aa",
-    "email": "miguel@profea",
-    "hash": "$2b$10$pX6VbNREdqYB0dy0kn3LquyeH4OyjKb37GpX3xjQy7l3MFtUAVxNu"
-  }
-][
-  {
-    "username": "a",
-    "email": "miguel@profe",
-    "hash": "$2b$10$Wz1Sw/jpCKCbsZ39GtZUx.6mjlKSV6C8cfaAI8jZFu2VA9Ggb4X8G"
+    "username": "hola",
+    "email": "miguelgamboasanchez@gmail.com",
+    "hash": "$2b$10$u1oJFCu0O3c.G/FkW8KS/eS282tLb23ml9ZOQ7yKLcajdlHSklA8u",
+    "last_Login": "2025-01-27T16:17:12.209Z"
   }
 ]
