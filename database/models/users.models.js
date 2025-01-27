@@ -30,6 +30,8 @@ users.comparePass = async function(password, hash){
 }
 
 users.register = async function(username, email, password) {
+
+    const databaseContent = await users.showDatabase();
     if (users.data.hasOwnProperty(username)) {
         throw new Error(`Ya existe el usuario ${username}.`);
     }
@@ -48,7 +50,7 @@ users.register = async function(username, email, password) {
     users.email_user[email] = username;
 
     // Obtener los datos de la base de datos como un array
-    const databaseContent = await users.showDatabase();
+    
     databaseContent.push(users.data[username]);
 
 
