@@ -5,16 +5,21 @@
 <div class="container">
     <canvas width="400" height="400" id="snake" style="border: 1px inset #000000;"></canvas>
     <table>
-        <tr><td>MEJORES PUNTUACIONES</td></tr>
-        <tr>
-          <td><%= session.user.username %></td>
-          <td><span id=record></span></td>
-        </tr>
-        <tr>
+        <thead>
+          <tr><td colspan="2" style="font-size: 140%;"><b><u>MEJORES PUNTUACIONES</u></b></td></tr>
+          <tr><td><b>Usuario</b></td><td><b>Récord</b></td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= session.user.username %></td>
+            <td><span id=record></span></td>
+          </tr>
+          <tr>
             <td>Pedro</td>
             <td>16</td>
           </tr>
-      </table>
+        </tbody>
+    </table>
 </div>
 <script src="/javascript/snake.js"></script>
 <h1>RÉCORD DE <%= session.user.username %>: <span id="record2"></span></h1>

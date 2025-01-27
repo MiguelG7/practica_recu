@@ -27,6 +27,7 @@
 
     // Conexión con el servidor Socket.IO
     const socket = io();
+    socket.emit('chat message', (String("<%= cookies.user%> "+ "se ha conectado")));
     // Referencias a elementos del DOM
     const form = document.getElementById('form');
     const input = document.getElementById('input');
