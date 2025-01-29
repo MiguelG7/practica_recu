@@ -1,13 +1,8 @@
 [
   {
-    "username": "miguel1",
-    "email": "miguelgamboasanchez@gmail.com",
-    "hash": "$2b$10$YzUwidVkI7kJeQS4NR/tp.cbN8xvS2mMw2BBG/d9GbARxz6r01hrm"
-  },
-  {
-    "username": "root",
-    "email": "root@root",
-    "hash": "$2b$10$383D7IQQvQkrtlKC99q62ORfbg2yxzJl0dluymVmd.fJYOr8i2Aci",
-    "last_Login": "2025-01-27T16:23:26.704Z"
+    "username": "a",
+    "email": "miguel@profe",
+    "hash": "$2b$10$THYwq7fDuybrjnubNS9OcOYBWGsuXsvXqoEIs1ocwi2QJDPqh5RF6",
+    "last_Login": "2025-01-28T16:51:14.015Z"
   }
 ]

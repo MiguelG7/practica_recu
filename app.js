@@ -21,6 +21,7 @@ const footerRouter = require('./routes/footer');
 const chatRouter = require('./routes/chat');
 const snakeRouter = require('./routes/snake');
 const registerRouter = require('./routes/register');
+const gameRouter = require('./routes/game');
 
 app.use(session({
     secret: 'mi-secreto',
@@ -42,6 +43,7 @@ app.use(express.urlencoded({ extended: true }));//hace que se pueda usar req.bod
 app.use(express.json());//hace que se pueda usar req.body
 
 app.use('/', indexRouter,footerRouter);
+app.use('/game', gameRouter);
 app.use('/chat', chatRouter);
 app.use('/snake', snakeRouter);
 app.use('/register', registerRouter);

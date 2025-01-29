@@ -15,8 +15,7 @@ router.post('/', async (req,res)=>{
     const password = req.body.password1;
 
     try {
-        await users.register(username, email, password);
-        await console.log(users.showDatabase());
+        await users.register(username, email, password);;
         console.log(username," (", email,") ", "se ha registrado con éxito");
         res.redirect('/');
         

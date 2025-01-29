@@ -16,14 +16,16 @@ router.post('/save-score', (req,res) =>{
 
     console.log("Servidor: récord recibido de ",  req.session.user.username, "recibido", req.body.record)
 
-    highscores = {
+    highscores = fs.readFileSync('./database/highscores.json', 'utf8');
+
+    highscores.push = {
         username: req.session.user.username,
         record:  req.body.record
     };
     console.log(JSON.stringify(highscores, null, 2));
 
         // Escribir los datos en un archivo JSON
-    fs.appendFile('./database/highscores.json', (JSON.stringify(highscores, null, 2)+"\n"), err => {
+    fs.writeFile('./database/highscores.json', (JSON.stringify(highscores, null, 2)+"\n"), err => {
         if (err) {
             console.error("Error al escribir en la base de datos:", err);
         } else {

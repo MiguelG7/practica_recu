@@ -13,6 +13,7 @@ router.get('/', (req,res) =>{
 
 router.post('/login', async (req,res) => {
     const user = req.body.user;
+    req.session.user1234 = user;
     const password = req.body.password;
     console.log(user,password);
     const esValido = await users.isLoginRight(user,null,password);
