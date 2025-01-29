@@ -1,0 +1,18 @@
+//------------------------------------------------------
+//ORDENAR ARRAY DE MAYOR A MENOR
+
+const fs = require('fs');
+
+// Leer el archivo JSON y convertirlo en un array de objetos
+const data = fs.readFileSync('data.json', 'utf8');
+const usuarios = JSON.parse(data);
+
+// Ordenar el array de mayor a menor puntuación
+usuarios.sort((a, b) => b.puntuacion - a.puntuacion);
+
+// Guardar el JSON ordenado en el archivo
+fs.writeFileSync('data.json', JSON.stringify(usuarios, null, 2), 'utf8');
+
+console.log("JSON ordenado y guardado correctamente.");
+console.log(usuarios); // Para ver el JSON ordenado en la consola
+//------------------------------------------------------
