@@ -16,3 +16,90 @@ fs.writeFileSync('data.json', JSON.stringify(usuarios, null, 2), 'utf8');
 console.log("JSON ordenado y guardado correctamente.");
 console.log(usuarios); // Para ver el JSON ordenado en la consola
 //------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de Dificultad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Barra de Dificultad</h1>
+    <div class="difficulty-bar-container">
+      <div id="difficulty-bar" class="difficulty-bar"></div>
+    </div>
+    <button id="increase-btn">Aumentar dificultad</button>
+    <button id="decrease-btn">Disminuir dificultad</button>
+  </div>
+
+  <script>
+    let difficulty = 0;
+    const bar = document.getElementById('difficulty-bar');
+    const increaseBtn = document.getElementById('increase-btn');
+    const decreaseBtn = document.getElementById('decrease-btn');
+
+    // Función para actualizar la barra según la dificultad
+    function updateBar() {
+      bar.style.width = `${difficulty}%`;
+    }
+
+    // Aumentar dificultad
+    increaseBtn.addEventListener('click', () => {
+      if (difficulty < 100) difficulty += 10;
+      updateBar();
+    });
+
+    // Disminuir dificultad
+    decreaseBtn.addEventListener('click', () => {
+      if (difficulty > 0) difficulty -= 10;
+      updateBar();
+    });
+
+    updateBar();
+  </script>
+</body>
+</html>
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  text-align: center;
+}
+
+.difficulty-bar-container {
+  width: 80%;
+  height: 30px;
+  background-color: #ddd;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+.difficulty-bar {
+  height: 100%;
+  background-color: green;
+  border-radius: 15px;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
